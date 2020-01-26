@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Drag & Drop</title>
+
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css">
+    <link rel="stylesheet" href="asset/css/font-awesome.min.css">
+
+    <!-- custom-style -->
+
+
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/responsive.css">
+
+    <!-- custom-style -->
+
+
+    <!-- google-fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400,700&display=swap" rel="stylesheet"> 
+    
+    <!-- google-fonts -->
+
+
+  </head>
+  <body>
+    
+<!-- content-area-start -->
+
+
+<div class="content-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="content">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="content-navs">
+                <ul>
+                  <li><a href="#" id="clicked"><i class="fa fa-pencil"></i></a>
+                    <span>Text</span>
+                  </li>
+                  <li><a href="#"><i class="fa fa-align-left"></i></a>
+                  <span>Textarea</span>
+                  </li>
+                  <li><a href="#"><i class="fa fa-envelope"></i></a>
+                  <span>Email</span>
+                  </li>
+                  <li><a href="#" id="clicked"><i class="fa fa-pencil"></i></a>
+                    <span>Text</span>
+                  </li>
+                  <li><a href="#"><i class="fa fa-align-left"></i></a>
+                  <span>Textarea</span>
+                  </li>
+                  <li><a href="#"><i class="fa fa-envelope"></i></a>
+                  <span>Email</span>
+                  </li>
+                  <li><a href="#" id="clicked"><i class="fa fa-pencil"></i></a>
+                    <span>Text</span>
+                  </li>
+                  <li><a href="#"><i class="fa fa-align-left"></i></a>
+                  <span>Textarea</span>
+                  </li>
+                  <li><a href="#"><i class="fa fa-envelope"></i></a>
+                  <span>Email</span>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 pr-0">
+              <div class="content-option">
+
+
+              </div>
+            </div>
+            <div class="col-md-6 pl-0">
+              <div class="form-option">
+                
+                <div class="fillup-form">
+                  
+                </div>
+                <div class="sendbtn">
+                  <a href="#">Send</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- content-area-end -->
+
+
+<script src="asset/js/jquery.min.js"></script>
+
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<script src="asset/js/bootstrap.min.js"></script>
+
+
+
+<script>
+    $(document).ready(function(){
+        $("#clicked").click(function(){
+
+        $(".content-option").append('<div class="titletext"> <div class="titletextcontent"> <div class="firticon"> <i class="fa fa-pencil"></i> <div class="icon"> <i class="fa fa-hand-pointer-o"></i> </div></div><div class="title"> <a href="#">Title</a> </div></div><div class="actionbtn text-right"> <a href="#"><i class="fa fa-check-circle-o"></i></a> <a href="#"><i class="fa fa-trash"></i></a> <a href="#"><i class="fa fa-clone"></i></a> <a href="#"><i class="fa fa-cog"></i></a> </div></div>');
+
+        $(".fillup-form").append('<div class="form-group"> <label>Title</label> <input type="text" class="form-control"> </div>');
+
+        });
+
+    });
+</script>
+<script>
+$('#clicked').draggable({ 
+  appendTo: 'body',
+  helper: 'clone',
+});
+$('.content-option').droppable({
+  activeClass: 'active',
+  hoverClass: 'hover',
+  accept: ":not(.ui-sortable-helper)",
+  drop: function (e, ui) {
+    var $titleinfo = $('<div class="titletext"> <div class="titletextcontent"> <div class="firticon"> <i class="fa fa-pencil"></i> <div class="icon"> <i class="fa fa-hand-pointer-o"></i> </div></div><div class="title"> <a href="#">Title</a> </div></div><div class="actionbtn text-right"> <a href="#"><i class="fa fa-check-circle-o"></i></a> <a href="#"><i class="fa fa-trash"></i></a> <a href="#"><i class="fa fa-clone"></i></a> <a href="#"><i class="fa fa-cog"></i></a> </div></div>');
+    $(this).append($titleinfo);
+
+     // alert(jahid);
+
+     $(".fillup-form").append('<div class="form-group"> <label>Title</label> <input type="text" class="form-control"> </div>');
+  }
+});
+
+</script>
+
+  </body>
+</html>

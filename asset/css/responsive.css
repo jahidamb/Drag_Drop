@@ -1,0 +1,16 @@
+@media all and (max-width:767px){
+    
+    .pr-0{
+        padding-right: 15px !important;
+    }
+	.pl-0{
+        padding-left: 15px !important;
+    }
+    .content-navs ul{
+        display: flow-root !important;
+    }
+    .content-navs ul li{
+        display: inline-block;
+    }
+}
+
